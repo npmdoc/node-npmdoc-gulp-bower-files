@@ -63,15 +63,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.gulp-bower-files.logger">
-            function <span class="apidocSignatureSpan">gulp-bower-files.</span>logger
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.gulp-bower-files.package">
             function <span class="apidocSignatureSpan">gulp-bower-files.</span>package
             <span class="apidocSignatureSpan">(opts, collection)</span>
@@ -97,19 +88,6 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-bower-files.</span>package_collection.prototype</span>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-bower-files.logger">module gulp-bower-files.logger</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.gulp-bower-files.logger.logger">
-            function <span class="apidocSignatureSpan">gulp-bower-files.</span>logger
-            <span class="apidocSignatureSpan">()</span>
-            </a>
 
         </li>
 
@@ -219,27 +197,6 @@
 
 
     <h2>
-        <a href="#apidoc.element.gulp-bower-files.logger" id="apidoc.element.gulp-bower-files.logger">
-        function <span class="apidocSignatureSpan">gulp-bower-files.</span>logger
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">logger = function () {
-	var args = Array.prototype.slice.call(arguments);
-
-	args = args.map(function(arg, i) {
-		return colors[i](arg);
-	});
-
-	log.apply(log, args);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.gulp-bower-files.package" id="apidoc.element.gulp-bower-files.package">
         function <span class="apidocSignatureSpan">gulp-bower-files.</span>package
         <span class="apidocSignatureSpan">(opts, collection)</span>
@@ -289,32 +246,6 @@
 
 
 
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.gulp-bower-files.logger" id="apidoc.module.gulp-bower-files.logger">module gulp-bower-files.logger</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.gulp-bower-files.logger.logger" id="apidoc.element.gulp-bower-files.logger.logger">
-        function <span class="apidocSignatureSpan">gulp-bower-files.</span>logger
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">logger = function () {
-	var args = Array.prototype.slice.call(arguments);
-
-	args = args.map(function(arg, i) {
-		return colors[i](arg);
-	});
-
-	log.apply(log, args);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
 
 
 </div>
@@ -570,21 +501,21 @@ if(!files || !files.length) {
     this._packages[name] = new Package(opts, this);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-},
+    if(this.opts.includeDev === true &#x26;&#x26; bowerJson.devDependencies) {
+        for(var name in bowerJson.devDependencies) {
+            dependencies[name] = bowerJson.devDependencies[name];
+        }
+    }
 
-/**
- * Adds package dependencies to the collection
- */
-addDependencies: function() {
-    for(var name in this.dependencies) {
-        this.collection.<span class="apidocCodeKeywordSpan">add</span>(name, path.join(this.path, &#x22;..&#x22;, name));
+    for(var name in dependencies) {
+        this.<span class="apidocCodeKeywordSpan">add</span>(name, path.join(this.opts.paths.bowerDirectory, &#x22;/&#x22;, name));
     }
 },
 
 /**
- * Gets main files of the package
+ * Get srcs of all packages
  *
- * @param  {Boolean}    force  If true it will not wait for the dependencies
+ * @return {Array}
 ...</pre></li>
     </ul>
 
