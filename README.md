@@ -1,4 +1,7 @@
-# api documentation for  [gulp-bower-files (v0.2.7)](https://github.com/ck86/gulp-bower-files)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-bower-files.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-bower-files) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-bower-files.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-bower-files)
+# npmdoc-gulp-bower-files
+
+#### basic api documentation for  [gulp-bower-files (v0.2.7)](https://github.com/ck86/gulp-bower-files)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-bower-files.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-bower-files) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-bower-files.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-bower-files)
+
 #### Build gulp.src() of your bower packages main files.
 
 [![NPM](https://nodei.co/npm/gulp-bower-files.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-bower-files)
@@ -60,7 +63,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "0.2.7"
+    "version": "0.2.7",
+    "bin": {}
 }
 ```
 
